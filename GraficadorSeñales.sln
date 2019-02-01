@@ -5,21 +5,21 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraficadorSeñales", "GraficadorSeñales\GraficadorSeñales.csproj", "{AE8A63C3-B4DA-46BC-AB23-E7777224AC96}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D078D4E4-85BC-4E35-B3B9-BC320B28810F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wavs", "Wavs", "{54F36E9F-99F8-4983-BCA8-DAE8874969B6}"
 	ProjectSection(SolutionItems) = preProject
-		..\wavs\0.wav = ..\wavs\0.wav
-		..\wavs\1.wav = ..\wavs\1.wav
-		..\wavs\2.wav = ..\wavs\2.wav
-		..\wavs\3.wav = ..\wavs\3.wav
-		..\wavs\4.wav = ..\wavs\4.wav
-		..\wavs\5.wav = ..\wavs\5.wav
-		..\wavs\6.wav = ..\wavs\6.wav
-		..\wavs\7.wav = ..\wavs\7.wav
-		..\wavs\8.wav = ..\wavs\8.wav
-		..\wavs\9.wav = ..\wavs\9.wav
-		..\wavs\asterisco.wav = ..\wavs\asterisco.wav
-		..\wavs\dtmf.png = ..\wavs\dtmf.png
-		..\wavs\gato.wav = ..\wavs\gato.wav
+		wavs\0.wav = wavs\0.wav
+		wavs\1.wav = wavs\1.wav
+		wavs\2.wav = wavs\2.wav
+		wavs\3.wav = wavs\3.wav
+		wavs\4.wav = wavs\4.wav
+		wavs\5.wav = wavs\5.wav
+		wavs\6.wav = wavs\6.wav
+		wavs\7.wav = wavs\7.wav
+		wavs\8.wav = wavs\8.wav
+		wavs\9.wav = wavs\9.wav
+		wavs\asterisco.wav = wavs\asterisco.wav
+		wavs\dtmf.png = wavs\dtmf.png
+		wavs\gato.wav = wavs\gato.wav
 	EndProjectSection
 EndProject
 Global

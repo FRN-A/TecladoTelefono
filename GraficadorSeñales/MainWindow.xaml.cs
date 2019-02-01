@@ -125,22 +125,34 @@ namespace GraficadorSeñales
 				int indiceMaximoFrecuenciasAltas = 0;
 
 				indiceMinimoFrecuenciasBajas = 680 * transformada.Muestras.Count / (int)señal.FrecuenciaMuestreo;
-				indiceMinimoFrecuenciasBajas = 1000 * transformada.Muestras.Count / (int)señal.FrecuenciaMuestreo;
+				indiceMaximoFrecuenciasBajas = 1000 * transformada.Muestras.Count / (int)señal.FrecuenciaMuestreo;
 				indiceMinimoFrecuenciasAltas = 1200 * transformada.Muestras.Count / (int)señal.FrecuenciaMuestreo;
-				indiceMinimoFrecuenciasAltas = 1500 * transformada.Muestras.Count / (int)señal.FrecuenciaMuestreo;
+				indiceMaximoFrecuenciasAltas = 1500 * transformada.Muestras.Count / (int)señal.FrecuenciaMuestreo;
 
-				double valorMaximo = 0;
-				int indiceMaximo = 0;
-				int indiceActual = 0;
+				double valorMaximoBajo = 0;
+				int indiceMaximoBajo = 0;
 
-				for (int i = indiceMinimoFrecuenciasBajas; i < indiceMaximoFrecuenciasBajas; i++)
+				for (int indiceActual = indiceMinimoFrecuenciasBajas; indiceActual < indiceMaximoFrecuenciasBajas; indiceActual++)
 				{
-					if (transformada.Muestras[i].Y > valorMaximo)
+					if (transformada.Muestras[indiceActual].Y > valorMaximoBajo)
 					{
-						valorMaximo = transformada.Muestras[i].Y;
-						indiceMaximo = indiceActual;
+						valorMaximoBajo = transformada.Muestras[indiceActual].Y;
+						indiceMaximoBajo = indiceActual;
 					}
 				}
+
+				double valorMaximoAlto = 0;
+				int indiceMaximoAlto = 0;
+
+				for (int indiceActual = indiceMinimoFrecuenciasAltas; indiceActual < indiceMaximoFrecuenciasAltas; indiceActual++)
+				{
+					if (transformada.Muestras[indiceActual].Y > valorMaximoAlto)
+					{
+						valorMaximoAlto = transformada.Muestras[indiceActual].Y;
+						indiceMaximoAlto = indiceActual;
+					}
+				}
+
 
 				/*
 				foreach (Muestra muestra in transformada.Muestras)
@@ -155,8 +167,79 @@ namespace GraficadorSeñales
 						break;
 				}
 				*/
-				double frecuenciaFundamental = (double)indiceMaximo * señal.FrecuenciaMuestreo / (double)transformada.Muestras.Count;
-				Hertz.Text = frecuenciaFundamental.ToString() + "Hz";
+
+				double frecuenciaFundamentalBaja = (double)indiceMaximoBajo * señal.FrecuenciaMuestreo / (double)transformada.Muestras.Count;
+				
+				double frecuenciaFundamentalAlta = (double)indiceMaximoAlto * señal.FrecuenciaMuestreo / (double)transformada.Muestras.Count;
+				
+
+				if (frecuenciaFundamentalBaja > 694 && frecuenciaFundamentalBaja < 700)
+				{
+					if (frecuenciaFundamentalAlta > 1206 && frecuenciaFundamentalAlta < 1215)
+					{
+						Hertz.Text = "1";
+					} else
+					if (frecuenciaFundamentalAlta > 1330 && frecuenciaFundamentalAlta < 1340)
+					{
+						Hertz.Text = "2";
+					} else
+					if (frecuenciaFundamentalAlta > 1470 && frecuenciaFundamentalAlta < 1480)
+					{
+						Hertz.Text = "3";
+					}
+				} else 
+				if (frecuenciaFundamentalBaja > 765 && frecuenciaFundamentalBaja < 780)
+				{
+					if (frecuenciaFundamentalAlta > 1206 && frecuenciaFundamentalAlta < 1215)
+					{
+						Hertz.Text = "4";
+					}
+					else
+					if (frecuenciaFundamentalAlta > 1330 && frecuenciaFundamentalAlta < 1340)
+					{
+						Hertz.Text = "5";
+					}
+					else
+					if (frecuenciaFundamentalAlta > 1470 && frecuenciaFundamentalAlta < 1480)
+					{
+						Hertz.Text = "6";
+					}
+				} else
+				if (frecuenciaFundamentalBaja > 845 && frecuenciaFundamentalBaja < 855)
+				{
+					if (frecuenciaFundamentalAlta > 1206 && frecuenciaFundamentalAlta < 1215)
+					{
+						Hertz.Text = "7";
+					}
+					else
+					if (frecuenciaFundamentalAlta > 1330 && frecuenciaFundamentalAlta < 1340)
+					{
+						Hertz.Text = "8";
+					}
+					else
+					if (frecuenciaFundamentalAlta > 1470 && frecuenciaFundamentalAlta < 1480)
+					{
+						Hertz.Text = "9";
+					}
+				} else
+				if (frecuenciaFundamentalBaja > 935 && frecuenciaFundamentalBaja < 945)
+				{
+					if (frecuenciaFundamentalAlta > 1206 && frecuenciaFundamentalAlta < 1215)
+					{
+						Hertz.Text = "*";
+					}
+					else
+					if (frecuenciaFundamentalAlta > 1330 && frecuenciaFundamentalAlta < 1340)
+					{
+						Hertz.Text = "0";
+					}
+					else
+					if (frecuenciaFundamentalAlta > 1470 && frecuenciaFundamentalAlta < 1480)
+					{
+						Hertz.Text = "#";
+					}
+				}
+
 
 			}
 
